@@ -172,19 +172,24 @@ article a:hover { /*Ao passar mouse por link ele destaca*/
 /* ********************************************************************************  */
 
 .form-contato {
-    max-width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.form-contato label {
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
     display: block;
     margin-bottom: 5px;
-    margin-top: 10px;
     font-weight: 600;
     color: #333;
 }
 
-.form-contato input, /*Configurações em comum do input e do textarea*/
-.form-contato textarea {
+.form-group input,
+.form-group textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
@@ -192,12 +197,11 @@ article a:hover { /*Ao passar mouse por link ele destaca*/
     font-family: 'Roboto', sans-serif;
 }
 
-.form-contato textarea { /*textarea permite o resize apenas vertical*/
+.form-group textarea {
     resize: vertical;
 }
 
-button[type="submit"] { /*botão de submit*/
-    margin-top: 10px;
+button[type="submit"] {
     background-color: rgba(0, 0, 0, 0.9);
     color: white;
     border: none;
@@ -209,6 +213,6 @@ button[type="submit"] { /*botão de submit*/
     transition: background-color 0.3s;
 }
 
-button[type="submit"]:hover { /*Mudança de cor ao passar por cima do botão submit*/
+button[type="submit"]:hover {
     background-color: #333;
 }
