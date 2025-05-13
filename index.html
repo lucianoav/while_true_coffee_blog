@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@300;400&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
     <title>Blog While True: ++ coffee</title>
 </head>
 
 <body>
+    <!-- Menu -->
     <nav>
         <ul class="menu">
             <li><a href="#blog">BLOG</a></li>
@@ -20,10 +19,12 @@
             <li><a href="#contact_me">CONTATO</a></li>
         </ul>
     </nav>
+    <!-- Grid -->
     <div class = "container-grid">
         <div class = "coluna-esquerda"></div>
         <div class = "coluna-central">
-            <main class="conteudo-principal"> 
+            <main> 
+                <!-- Seção Sobre mim -->
                 <section id="about_me" class="content">
                     <article lang="pt-br">
                         <h1>Sobre mim</h1>
@@ -40,7 +41,7 @@
                         </p>
                     </article>
                 </section>
-
+                <!-- Seção Formação Educacional -->
                 <section id="educational_background" class="content">
                     <article lang="pt-br">
                         <h1>Formação educacional</h1>
@@ -57,19 +58,19 @@
                         </ul>
                     </article>
                 </section>
-
+                <!-- Seção Portifólio -->
                 <section id="portifolio" class="content">
                     <article lang="pt-br">
                         <h1>Portifólio</h1>
                         <p>Veja o meu portifólio no <a href="https://github.com/lucianoav" target="_blank" rel="noopener noreferrer">Github</a>.</p>
                     </article>
                 </section>
-
+                <!-- Seção Contato -->
                 <section id="contact_me" class="content">
                     <article lang="pt-br">
                         <h1>Contato</h1>
                         <p>
-                            Me adicione no <a href = "https://www.linkedin.com/in/luciano-alves-vieira-6b33b0121/" rel="noopener noreferrer">Linkedin</a>.
+                            Me adicione no <a href = "https://www.linkedin.com/in/luciano-alves-vieira-6b33b0121/" target="_blank" rel="noopener noreferrer">Linkedin</a>.
                         </p>
                         <p>
                             Vamos jogar uma partida de xadrez: <a href="https://www.chess.com/member/lvieirace" target="_blank" rel="noopener noreferrer">Chess.com</a> ou <a href="https://lichess.org/@/lvieirace" target="_blank" rel="noopener noreferrer">Lichess</a>.
@@ -77,18 +78,19 @@
                         <p>
                             Ou me mande uma mensagem!
                         </p>
+                        <!-- Formulário -->
                         <form class="form-contato">
-                        <div class="form-group">
+                        <div>
                             <label for="nome">Nome:</label>
                             <input type="text" id="nome" name="nome" required>
                         </div>
                         
-                        <div class="form-group">
+                        <div>
                             <label for="email">Email:</label>
                             <input type="email" id="email" name="email" required>
                         </div>
                         
-                        <div class="form-group">
+                        <div>
                             <label for="mensagem">Mensagem:</label>
                             <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
                         </div>
@@ -97,7 +99,7 @@
                     </form>
                     </article>
                 </section>
-
+                <!-- Seção blog -->
                 <section id="blog" class="content">
                     <article lang="pt-br">
                         <h1>Blog</h1>
@@ -110,6 +112,7 @@
         </div>
         <div class = "coluna-direita"></div>
     </div>
+    <!-- Rodapé -->
     <footer>
         <p>© 2025 Luciano Alves Vieira. Todos os direitos reservados.</p>
     </footer>

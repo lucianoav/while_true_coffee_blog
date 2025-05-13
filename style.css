@@ -1,21 +1,18 @@
-body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    color: #333333;
-}
+
+/* ********************************************************************************  */
+/* ******************************Configurações do Menu ***************************** */
+/* ********************************************************************************  */
 
 nav {
-    position: sticky;
-    top: 0;          
-    left: 0;         
-    width: 100%;     
-    z-index: 1000;   
+    position: sticky; /*Posicionado baseado no scroll da página*/
+    top: 0; /*Posição do menu em relação ao scroll: sempre no topo*/
+    z-index: 1000; /*O menu se mantém a frente do resto do conteúdo da página*/
 }
 
 ul.menu { 
     list-style-type: none; 
     margin: 0; 
-    padding:0 10%;
+    padding:0 10%; /*Opções do menu começam e terminam em 10% da página horizontalmente*/
     overflow: hidden;
     background: rgba(0, 0, 0, 0.9); 
 }
@@ -29,40 +26,56 @@ ul.menu a {
     display: block;
     padding: 12px 25px;
     color: white;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease; /*Torna o efeito de transição da animação ao passar o mouse sobre o menu mais fluida*/
     font-weight: bold;
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
 }
 
-ul.menu a:hover {
+ul.menu a:hover { /*Ao passar o mouse sobre opção do menu as cores entre texto e fundo se invertem*/
     background-color: white;
     color: rgba(0, 0, 0, 0.8);
-    border-radius: 0px;
 }
 
-.content {
-    display: none;
+/* ********************************************************************************  */
+/* ************************* Configurações gerais do <body> ************************ */
+/* ********************************************************************************  */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #333333;
 }
 
-body:not(:has(:target)) #about_me.content {
+/* ********************************************************************************  */
+/* *************** Configuração para deixar texto das seções ocultos *************** */
+/* ********************************************************************************  */
+
+body:not(:has(:target)) #about_me.content { /*Quando a página é carregada a seção Sobre mim (about me) é a default*/
     display: block;
 }
 
-.content:target{
+.content { /*Classe utilizada para manter os textos das seções ocultos até serem selecionadas no menu*/
+    display: none;
+}
+
+.content:target{ /*Texto da seção selecionada é visualizado*/
     display: block;
     padding-top: 60px;  
     margin-top: -60px;  
 }
 
-.content:target ~ #about_me.content {
+.content:target ~ #about_me.content { /*Texto da seção Sobre mim é escondido quando qualquer outra opção é selecionado*/
     display: none;
 }
 
+/* ********************************************************************************  */
+/* ****************************** Construção do grid ******************************* */
+/* ********************************************************************************  */
+
 .container-grid {
     display: grid;
-    grid-template-columns: 1fr 4fr 1fr; 
-    min-height: 100vh; 
+    grid-template-columns: 1fr 4fr 1fr; /*A tela é dividida horizontalmente em 3 partes, sendo a central 4 vezes maior que as duas outras*/
+    min-height: 100vh;  /*As colunas se estedem do começo ao fim da tela*/
 }
 
 .coluna-esquerda, .coluna-direita {
@@ -70,78 +83,83 @@ body:not(:has(:target)) #about_me.content {
 }
 
 .coluna-central {
-    padding: 10px;
-    border-left: 1px solid #ddd; 
-    border-right: 1px solid #ddd;
+    padding: 10px 40px;
 }
+
+
+/* ********************************************************************************  */
+/* *************************** Fontes e cores de texto ***************************** */
+/* ********************************************************************************  */
 
 h1, h2 {
     font-family: 'Montserrat', sans-serif;
-    color: #222; 
+    color: rgba(0, 0, 0, 0.9); ; 
 }
+
+strong {
+    color: rgba(0, 0, 0, 0.9); 
+}
+
+/* ********************************************************************************  */
+/* ****************************** Listas no texto ********************************** */
+/* ********************************************************************************  */
 
 ul.lista {
     list-style: none; 
     padding-left: 0;
-    line-height: 1.6; 
+    line-height: 1.6; /*"espaçamento" entre linhas*/
 }
 
 ul.lista li {
     margin-bottom: 12px;
     padding-left: 15px;
-    border-left: 2px solid rgba(0, 0, 0, 0.8); 
+    border-left: 2px solid rgba(0, 0, 0, 0.8);  /*Linha horizontal a esquerda, delimita cada item da lista*/
     position: relative;
 }
 
-ul.lista li:hover {
+ul.lista li:hover { /*Destaca o item que o mouse estiver e cima*/
     background-color: #ddd; 
-    transform: translateX(5px); 
-    transition: all 0.3s ease;
+    transform: translateX(5px); /*Desloca levemente o item para a direita*/
+    transition: all 0.3s ease; /*Torna a transição mais suave*/
 }
 
-ul.lista strong {
-    color: rgba(0, 0, 0, 0.8); 
-}
 
-.ano {
+.ano { /*Classe para o ano, permite que o texto da lista da formação educacional comece todo alinhado*/
     font-weight: 600;
     display: inline-block;
     width: 120px; 
 }
 
+/* ********************************************************************************* */
+/* ********************************** Rodapé *************************************** */
+/* ********************************************************************************* */
+
 footer {
-    border-top: 1px solid #eee;
-    padding: 0.5rem 0;
+    border-top: 1px solid #ddd;
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 0.9rem; /*Tamanho do texto igual a 90% do texto padrão da página*/
     color: #777;
 }
 
-.conteudo-principal {
-    margin: 0 auto; 
-    padding: 0 30px;
-}
+/* ********************************************************************************  */
+/* *************** Configurações relativas aos articles - textos ******************  */
+/* ********************************************************************************  */
 
 article p {
-    line-height: 1.8;
-    margin-bottom: 1.2rem;
+    line-height: 1.6;
 }
 
-article strong {
-    color: #2c3e50; 
-}
-
-a {
-    color: #333333;
+article a { /*Links ficam mesma cor do menu e mantém sublinhado*/
+    color: rgba(0, 0, 0, 0.9);
     text-decoration: underline; 
     transition: all 0.3s ease; 
 }
 
-a:visited {
-    color: #333333;
+article a:visited {
+    color: rgba(0, 0, 0, 0.9);
 }
 
-a:hover {
+article a:hover { /*Ao passar mouse por link ele destaca*/
     color: white; 
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.9);
@@ -149,26 +167,24 @@ a:hover {
     padding: 1px 3px;
 }
 
-/* Estilos do Formulário */
+/* ********************************************************************************  */
+/* ******************* Configurações relativas ao formulário **********************  */
+/* ********************************************************************************  */
+
 .form-contato {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 80%;
 }
 
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
+.form-contato label {
     display: block;
     margin-bottom: 5px;
+    margin-top: 10px;
     font-weight: 600;
     color: #333;
 }
 
-.form-group input,
-.form-group textarea {
+.form-contato input, /*Configurações em comum do input e do textarea*/
+.form-contato textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
@@ -176,11 +192,12 @@ a:hover {
     font-family: 'Roboto', sans-serif;
 }
 
-.form-group textarea {
+.form-contato textarea { /*textarea permite o resize apenas vertical*/
     resize: vertical;
 }
 
-button[type="submit"] {
+button[type="submit"] { /*botão de submit*/
+    margin-top: 10px;
     background-color: rgba(0, 0, 0, 0.9);
     color: white;
     border: none;
@@ -192,6 +209,6 @@ button[type="submit"] {
     transition: background-color 0.3s;
 }
 
-button[type="submit"]:hover {
+button[type="submit"]:hover { /*Mudança de cor ao passar por cima do botão submit*/
     background-color: #333;
 }
